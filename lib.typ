@@ -16,7 +16,7 @@
              blockcolor: gray,       // background color for caption
              breakable: true,        // whether the box can be broken
              stroke: 1pt + black,    // stroke size and color
-             width: 40em,            // width of the block
+             width: 100%,            // width of the block
              inset: 8pt,             // inset of the block
              radius: 4pt,            // radius of the block corners
   ) = {
