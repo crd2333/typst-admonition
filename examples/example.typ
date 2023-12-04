@@ -14,6 +14,10 @@
 #example2()[test]
 #quote()[test]
 
+#note(icon: "../svg/info.svg")[command for note but use icon info]
+
+#note(icon: emoji.face.cry)[command for note but use icon info]
+
 #info(caption: "This is a caption")[
   Cpation can be self defined if determined, otherwise it will be the same as the type.
 
