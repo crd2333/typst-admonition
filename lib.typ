@@ -9,6 +9,11 @@
   add admonitions(note, abstract, info, tip, success, question, warning, failure, bug, danger, example, example2, quote)
 */
 
+#let _empty_par() = {
+  v(-1em)
+  box()
+}
+
 #let iconbox(body,
              caption: "iconbox",
              icon: emoji.info,       // a symbol or an image
@@ -63,7 +68,8 @@
 
   // show the blocks, the second needs to be moved up to reach the first
   block1
-  move(dy: -1.2em, block2)
+  pad(bottom: -1.2em, move(dy: -1.2em, block2)) // negative padding to avoid extra space due to move
+  h(2em) // indent for the text below, can be delelted if not required
 }
 
 #let note(body, caption: none, icon: "./svg/note.svg", blockcolor: rgb(236, 243, 255), stroke: rgb(68, 138, 255), ..args) = {
