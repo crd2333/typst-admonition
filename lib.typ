@@ -68,7 +68,7 @@
 
   // show the blocks, the second needs to be moved up to reach the first
   block1
-  pad(bottom: -1.2em, move(dy: -1.2em, block2)) // negative padding to avoid extra space due to move
+  pad(bottom: -2.2em, move(dy: -1.2em, block2)) // negative padding to avoid extra space due to move
   h(2em) // indent for the text below, can be delelted if not required
 }
 
