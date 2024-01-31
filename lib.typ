@@ -1,12 +1,14 @@
 /*
-  typst-admonitions is a typst package that provides admonitions for typst. The icons are redrawed based on those in [material](https://squidfunk.github.io/mkdocs-material/reference/admonitions/)
+  typst-admonitions is a typst package that provides admonitions for typst. The icons are redrawed based on those in [material](https://squidfunk.github.io/mkdocs-material/reference/admonitions/). And it's easy to modify and add new icons.
 
   author: crd2333
-  version: 0.1
 
   version: 0.1
   add iconbox
   add admonitions(note, abstract, info, tip, success, question, warning, failure, bug, danger, example, example2, quote)
+
+  version: 0.2
+  add font style and size for caption and body
 */
 
 #let _empty_par() = {
@@ -24,16 +26,30 @@
              width: 100%,            // width of the block
              inset: 8pt,             // inset of the block
              radius: 4pt,            // radius of the block corners
+             font: (:),           // font of caption and body
+             caption_size: 13pt,     // size of the caption
+             size: 10.5pt,
   ) = {
   set block(breakable: breakable)
   // caption, placed in the first block
+  let title = if font != (:) {
+      text(font: font, size: caption_size, weight: "bold", baseline: -0.2em, ligatures: false)[#caption]
+    } else {
+      text(size: caption_size, weight: "bold", baseline: -0.2em, ligatures: false)[#caption]
+    }
   let caption = box(height: iconsize)[
     #if type(icon) == "symbol" {
         move(dy: 0.2em, text(iconsize, icon))
     } else {
       image(icon, fit: "contain")
     }
-  ] + "   " + text(size: 16pt, weight: "bold", baseline: -0.2em, ligatures: false)[#caption]
+  ] + " " + title
+
+  let body = if font != (:) {
+    text(font: font, size: size)[#body]
+  } else {
+    text(size: size)[#body]
+  }
 
   // the first block
   let block1 = block(
