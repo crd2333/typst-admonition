@@ -14,7 +14,7 @@
 #example2()[test]
 #quote()[test]
 
-#note(icon: "../svg/info.svg")[command for note but use info icon]
+#note(icon: "svg/info.svg")[command for note but use info icon]
 
 #note(icon: emoji.face.cry)[command for note but use emoji icon]
 
@@ -22,5 +22,9 @@
   Cpation can be self defined if determined, otherwise it will be the same as the type.
 
   Currently supported types are:\
-  note, abstract, info, tip, success, question, warning, failure, bug, danger, example, quote.
+  *note, abstract, info, tip, success, question, warning, failure, bug, danger, example, quote.*
+
+  #lorem(300) // test if breakable
 ]
+
+#lorem(20)
